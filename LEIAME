@@ -1,0 +1,8 @@
+----------------------------------------------
+PROJETO JAVA WEB PARA GERENCIAMENTO DE CLIENTE
+----------------------------------------------
+
+ - Todas as constantes do projeto estao em util.Constantes (Configs do PGSQL);
+ - O arquivo 'table.sql' contem a tabela em sql utilizada no projeto;
+ - Funcoes implementadas: Cadastrar e Listar;
+ - Funcoes a serem implementadas: Atualizar e Excluir;
