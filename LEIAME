@@ -1,8 +1,25 @@
-----------------------------------------------
-PROJETO JAVA WEB PARA GERENCIAMENTO DE CLIENTE
-----------------------------------------------
+PROJETO JAVA WEB - GERENCIAMENTO DE CLIENTES
+===================
 
- - Todas as constantes do projeto estao em util.Constantes (Configs do PGSQL);
+Stack
+-------------
+- Banco de Dados: PostgreSQL
+- Servidor: GlassFish
+- IDE: NetBeans
+
+
+Funções implementadas
+-------------
+- Cadastrar
+- Listar
+
+Funções a serem implementadas
+-------------
+- Atualizar
+- Excluir
+
+
+Observações
+-------------
+ - Todas as constantes do projeto estão em util.Constantes (Configs PSQL, Caminhos JSP, etc);
  - O arquivo 'table.sql' contem a tabela em sql utilizada no projeto;
- - Funcoes implementadas: Cadastrar e Listar;
- - Funcoes a serem implementadas: Atualizar e Excluir;
