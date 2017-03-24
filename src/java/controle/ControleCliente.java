@@ -7,6 +7,7 @@ package controle;
 
 import dao.ClienteDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -61,6 +62,49 @@ public class ControleCliente extends HttpServlet {
                 request.setAttribute(ATRI_LISTA, lc);
                 rd.forward(request, response);
 
+            } else if (acao.equals(ACAO_DELETAR)) {
+
+                int id = Integer.parseInt(request.getParameter(ID));
+
+                Cliente cliente = new Cliente();
+                cliente.setId(id);
+
+                cdao.Excluir(cliente);
+                
+                PrintWriter out = response.getWriter();
+
+                out.println("Cliente EXCLUIDO ");
+
+            } else if (acao.equals(ACAO_CONSULTAR)) {
+                int id = Integer.parseInt(request.getParameter(ID));
+                Cliente cliente = new Cliente();
+                cliente.setId(id);
+
+                ArrayList<Cliente> consultarCliente = cdao.Consultar(cliente);
+
+                request.setAttribute(ATRI_CONSULTA, consultarCliente);
+
+                rd = request.getRequestDispatcher(JSP_ALTERAR);
+                //quem vai acionar toda essa ação é o forward
+                rd.forward(request, response);
+            } else if (acao.equals(ACAO_ALTERAR)) {
+                System.out.println("TESTE");
+                int id = Integer.parseInt(request.getParameter("txtId"));
+                String nome = request.getParameter(PARAMETER_NOME);
+                String telefone = request.getParameter(PARAMETER_TEL);
+                String endereco = request.getParameter(PARAMETER_ENDE);
+
+                Cliente cliente = new Cliente();
+                cliente.setId(id);
+                cliente.setNome(nome);
+                cliente.setTel(telefone);
+                cliente.setEnde(endereco);
+
+                cdao.Alterar(cliente);
+
+                PrintWriter out = response.getWriter();
+
+                out.println("Cliente ALTERADO ");
             } else {
                 throw new IllegalAccessException();
             }
@@ -84,7 +128,7 @@ public class ControleCliente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.getWriter().print("YOU SHALL NOT PASS!");
+        processRequest(request, response);
     }
 
     /**

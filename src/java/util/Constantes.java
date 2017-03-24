@@ -15,10 +15,14 @@ public final class Constantes {
     public final static String JSP_SUCESSO = "sucesso.jsp";
     public final static String JSP_ERRO = "erro.jsp";
     public final static String JSP_LISTA = "listaCliente.jsp";
+    public final static String JSP_ALTERAR = "alterarCliente.jsp";
 
     //ACAO
     public final static String ACAO_CADASTRAR = "Cadastrar";
     public final static String ACAO_LISTAR = "Listar";
+    public final static String ACAO_DELETAR = "Excluir";
+    public final static String ACAO_CONSULTAR = "Consultar";
+    public final static String ACAO_ALTERAR = "Alterar";
 
     // PARAMETER & ATRI
     public final static String PARAMETER_ACAO = "acao";
@@ -29,6 +33,7 @@ public final class Constantes {
     public final static String ATRI_CLIENTE = "cliente";
     public final static String ATRI_ERRO = "erro";
     public final static String ATRI_LISTA = "lista";
+    public final static String ATRI_CONSULTA = "consulta";
 
     // Cliente 
     public final static String ID = "id";
@@ -40,6 +45,9 @@ public final class Constantes {
     // SQL
     public static final String INSERT = "INSERT into cliente(nome,cpf,telefone,endereco) VALUES (?,?,?,?)";
     public static final String SELECT_ALL = "SELECT * FROM cliente";
+    public static final String CONSULTAR = "SELECT * FROM cliente where id = ?";
+    public static final String DELETE = "DELETE FROM cliente WHERE id = ?";
+    public static final String ALTERAR = "UPDATE cliente SET nome = ?, telefone = ?, endereco = ? where id=?";
 
     // CONEXAO
     public static final String PSQL_IP = "localhost";

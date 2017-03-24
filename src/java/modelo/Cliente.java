@@ -53,7 +53,7 @@ public class Cliente {
         return ende;
     }
 
-    public void setEnde(String end) {
+    public void setEnde(String ende) {
         this.ende = ende;
     }
 

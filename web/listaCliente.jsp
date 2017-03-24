@@ -28,14 +28,14 @@
             <%
                 for (Cliente c : lc) {
             %>
-            
+            <tr>
                 <td><%= c.getId()%></td>
                 <td><%= c.getNome()%></td>
                 <td><%= c.getTel()%></td>
                 <% //TODO: Implementar Atualizar e Excluir Cliente %>
-                <td><a href="Controle?id=<%= c.getId()%>">[x]</a></td>
-                <td><a href="Controle?id=<%= c.getId()%>">[x]</a></td>
-            
+                <td><a href="ControleCliente?id=<%=c.getId() %>&acao=<%= ACAO_DELETAR %>"> Excluir </a></td>
+                <td><a href="ControleCliente?id=<%=c.getId() %>&acao=<%= ACAO_CONSULTAR %>"> Atualizar</a></td>
+            </tr>
             <% }%>
         </tbody>
     </table>
